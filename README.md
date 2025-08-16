@@ -5,6 +5,8 @@ A blockchain-based platform for secure assignment submission and verification us
 ## 🎯 Overview
 
 EduChain provides tamper-proof assignment submission with cryptographic verification. Students can submit assignments that are permanently recorded on the Aptos blockchain, ensuring academic integrity and transparent verification.
+<img width="562" height="437" alt="{C5527E57-02FA-462D-9C0D-9D4DC4617CC7}" src="https://github.com/user-attachments/assets/de00f175-ff9a-4d20-837a-3836cfe848fd" />
+
 
 ## ✨ Features
 
