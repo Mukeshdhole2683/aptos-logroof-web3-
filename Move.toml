@@ -1,0 +1,14 @@
+[package]
+name = "LogProof"
+version = "1.0.0"
+authors = ["Developer"]
+
+[addresses]
+MyModule = "_"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "aptos-node-v1.13.1"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-addresses]

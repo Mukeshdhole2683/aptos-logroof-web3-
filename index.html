@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Proof DApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>📚 EduChain</h1>
+                <p class="subtitle">Secure Assignment Verification System</p>
+            </div>
+            <div class="header-right">
+                <button id="darkModeToggle" class="theme-toggle" title="Toggle Dark Mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="student-info">
+                    <span id="studentId">Not Connected</span>
+                    <button id="connectWallet" class="wallet-btn">Connect Wallet</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="card submit-card">
+                <div class="card-header">
+                    <h2>📝 Submit Assignment</h2>
+                    <div class="card-badge">New Submission</div>
+                </div>
+                <p class="instruction">Submit your completed assignment with cryptographic proof for verification.</p>
+                <form id="storeForm">
+                    <div class="input-group">
+                        <label>Assignment Details:</label>
+                        <textarea id="logData" placeholder="Enter assignment description, answers, or completion notes..." required></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>Assignment ID/Hash:</label>
+                        <input type="text" id="proofHash" placeholder="Enter assignment ID or file hash" required>
+                        <button type="button" id="generateHash" class="hash-btn">Generate Hash from Details</button>
+                        <small>Generate hash from your assignment details or use assignment ID</small>
+                    </div>
+                    <button type="submit" class="action-btn">Submit Assignment</button>
+                </form>
+            </div>
+
+            <div class="card view-card">
+                <div class="card-header">
+                    <h2>🔍 Assignment History</h2>
+                    <div class="card-badge">View Records</div>
+                </div>
+                <p class="instruction">Check previously submitted assignments and their verification status.</p>
+                <form id="readForm">
+                    <div class="input-group">
+                        <label>Student Address:</label>
+                        <input type="text" id="ownerAddress" placeholder="Enter student wallet address" required>
+                        <div class="sample-addresses">
+                            <small>Sample addresses to try:</small>
+                            <div class="address-list">
+                                <code class="sample-addr" onclick="document.getElementById('ownerAddress').value=this.textContent">0xa1b2c3d4e5f6789012345678901234567890abcd</code>
+                                <code class="sample-addr" onclick="document.getElementById('ownerAddress').value=this.textContent">0xb2c3d4e5f6789012345678901234567890abcdef12</code>
+                                <code class="sample-addr" onclick="document.getElementById('ownerAddress').value=this.textContent">0xc3d4e5f6789012345678901234567890abcdef1234</code>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="action-btn">View Submissions</button>
+                </form>
+                
+                <div id="logResult" class="result-box" style="display: none;">
+                    <h3>📋 Assignment Submission:</h3>
+                    <div id="resultContent"></div>
+                </div>
+            </div>
+        </main>
+
+        <div id="status" class="status-bar"></div>
+    </div>
+
+    <script src="https://unpkg.com/@aptos-labs/ts-sdk@latest/dist/index.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
